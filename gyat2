@@ -1,14 +1,4 @@
--- Comprobación inicial
-local Players = game:GetService("Players")
 
-local success, valor = pcall(function()
-    return loadstring(game:HttpGet("https://raw.githubusercontent.com/JorgeG489/pipipi/main/falseandtrue.lua"))()
-end)
-
-if not success or not valor then
-    Players.LocalPlayer:Kick(success and "Script desactivado" or "Error al cargar la configuración")
-    return
-end
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
