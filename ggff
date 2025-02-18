@@ -1,53 +1,19 @@
-
--- Comprobación inicial
--- Comprobación inicial
-local Players = game:GetService("Players")
-
-
-
-local success, valor = pcall(function()
-    
-    
-    -- Intentar obtener el contenido con un tiempo límite
-    local url = "https://raw.githubusercontent.com/JorgeG489/pipipi/refs/heads/main/trueandfalse"
-   
-    
-    local codigoRemoto = game:HttpGet(url)
-    if not codigoRemoto or codigoRemoto == "" then
-        error("No se pudo obtener el código desde: " .. url)
-    end
-    
-
-    -- Compilar el código obtenido
-    local chunk, err = loadstring(codigoRemoto)
-    if not chunk then
-        error("Error al compilar el código: " .. tostring(err))
-    end
-    
-
-    -- Ejecutar el chunk para obtener el valor
-    local resultado = chunk()
-    
-    
-    return resultado
+-- Verificación inicial
+local success, result = pcall(function()
+    return loadstring(game:HttpGet('https://raw.githubusercontent.com/JorgeG489/pipipi/refs/heads/main/trueandfalse'))()
 end)
 
-
-
-
-if not success or not valor then
-    
-    Players.LocalPlayer:Kick(success and "Script down" or "Error al cargar la configuración")
+if not success or result ~= true then
+    game.Players.LocalPlayer:Kick("script down")
     return
 end
 
 
-
---s
-
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local TweenService = game:GetService("TweenService")
+local Players = game:GetService("Players")  -- Añadir esta línea
+
 
 local player = Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
@@ -104,29 +70,29 @@ local wave7Position = Vector3.new(-1286, 140, 194)
 -- Mover esta función al inicio del script, antes de su primer uso
 local function getCurrentHealth()
     if not player then 
-        
+        print("No se pudo encontrar LocalPlayer")
         return nil 
     end
     
     local character = player.Character or player.CharacterAdded:Wait()
     if not character then
-        
+        print("No se pudo encontrar Character")
         return nil
     end
     
     local humanoid = character:FindFirstChild("Humanoid")
     if not humanoid then
-        
+        print("No se pudo encontrar Humanoid")
         return nil
     end
     
     local health = humanoid.Health
     if health then
         local roundedHealth = math.floor(health)
-        
+        print("Vida actual:", roundedHealth)
         return roundedHealth
     else
-        
+        print("La vida es nil")
         return nil
     end
 end
@@ -217,7 +183,7 @@ local function chaseNPC(npc)
             -- Si el NPC está a menos de 25 unidades:
             if not didTeleport then
                 if tween then tween:Cancel() end
-                
+                print("TP por proximidad (distancia: "..currDistance..")")
                 rootPart.CFrame = targetCF  -- Realiza un TP solo una vez
                 didTeleport = true
             else
@@ -243,7 +209,7 @@ local function chaseNPC(npc)
         -- Si la distancia actual supera la distancia previa en más de 5 unidades,
         -- significa que el AC nos ha mandado hacia atrás, por lo que se reintenta con velocidad 100.
         if currDistance > prevDistance + 5 then
-            
+            print("AC detectado (distancia aumentó de "..prevDistance.." a "..currDistance.."); reintentando con tween a velocidad "..speedRetry)
             if tween then tween:Cancel() end
             local tweenInfoRetry = TweenInfo.new(currDistance / speedRetry, Enum.EasingStyle.Linear)
             tween = TweenService:Create(rootPart, tweenInfoRetry, { CFrame = targetCF })
@@ -373,12 +339,12 @@ end
 task.wait(3)
 
 -- Primero subir a altura segura
-
+print("Subiendo a altura segura inicial...")
 rootPart.CFrame = CFrame.new(rootPart.Position.X, SAFE_HEIGHT, rootPart.Position.Z)
 task.wait(1)
 
 -- Luego tween a wave 1
-
+print("Moviéndose a Wave 1...")
 local targetCF = CFrame.new(wavePositions[1])
 local tweenInfo = TweenInfo.new(
     1.5,  -- Duración fija como en instatp
@@ -400,12 +366,12 @@ activateBuso()
 local currentWave = 1
 
 -- Esperar a que aparezcan los NPCs de la primera wave
-
+print("Esperando NPCs de Wave 1...")
 while #workspace.NPCs:GetChildren() == 0 do
     task.wait(0.1)
 end
 
-
+print("Wave 1 iniciada")
 tweenToTarget(wavePositions[1])
 task.wait(1)
 
@@ -420,7 +386,7 @@ local function moveToNextWave(nextPos)
 
     while attempts < maxAttempts and not success do
         attempts = attempts + 1
-        
+        print("Transición a siguiente wave, intento " .. attempts)
 
         -- Subir a una altura segura
         rootPart.CFrame = CFrame.new(rootPart.Position.X, SAFE_HEIGHT, rootPart.Position.Z)
@@ -430,7 +396,7 @@ local function moveToNextWave(nextPos)
         local targetCF = CFrame.new(nextPos.X, SAFE_HEIGHT, nextPos.Z)
         local distance = (targetCF.Position - rootPart.Position).Magnitude
         local tweenDuration = distance / speed
-        
+        print("Distancia: " .. distance .. " | Duración del tween: " .. tweenDuration)
 
         local tweenInfo = TweenInfo.new(tweenDuration, Enum.EasingStyle.Linear)
         local tween = TweenService:Create(rootPart, tweenInfo, { CFrame = targetCF })
@@ -441,7 +407,7 @@ local function moveToNextWave(nextPos)
         -- Bajar a la posición final de la wave
         rootPart.CFrame = CFrame.new(nextPos)
         success = true
-        
+        print("Transición completada a la siguiente wave.")
     end
 
     return success
@@ -453,11 +419,11 @@ while currentWave <= 4 do
     magmaSwampInProgress = false
     cancelCurrentTween()
     
-    
+    print("Esperando NPCs de Wave " .. currentWave)
     local waitStart = tick()
     while #workspace.NPCs:GetChildren() == 0 do
         if tick() - waitStart > 5 then
-            
+            print("Reintentando detección de NPCs...")
             rootPart.CFrame = CFrame.new(wavePositions[currentWave])
             task.wait(1)
             waitStart = tick()
@@ -465,13 +431,13 @@ while currentWave <= 4 do
         task.wait(0.1)
     end
     
-    
+    print("NPCs encontrados para Wave " .. currentWave .. ": " .. #workspace.NPCs:GetChildren())
     task.wait(1)
     
     -- NUEVO: Forzar movimiento inicial hacia los NPCs
     local initialNPC, initialDistance = getClosestNPC()
     if initialNPC and initialNPC:FindFirstChild("HumanoidRootPart") then
-        
+        print("Iniciando movimiento inicial hacia NPCs")
         local npcPos = initialNPC.HumanoidRootPart.Position
         rootPart.CFrame = CFrame.new(Vector3.new(npcPos.X, npcPos.Y + 8, npcPos.Z))
         task.wait(0.5)
@@ -484,19 +450,20 @@ while currentWave <= 4 do
     local maxStuckAttempts = 3
     
     while areNPCsAlive() do
-        
-              
+        print("Estado actual - Wave:", currentWave, 
+              "NPCs vivos:", #workspace.NPCs:GetChildren(), 
+              "isChasingNPC:", isChasingNPC)
         
         processNPCs()
         task.wait(0.1)
         
         if tick() - stuckTimer >= 5 then
             local currentNPCCount = #workspace.NPCs:GetChildren()
-            
+            print("Comprobando progreso - NPCs actuales:", currentNPCCount, "NPCs anteriores:", lastNPCCount)
             
             if currentNPCCount >= lastNPCCount then
                 stuckAttempts = stuckAttempts + 1
-                
+                print("Detectado estancamiento #" .. stuckAttempts)
                 
                 isWaveTransitioning = false
                 isChasingNPC = false
@@ -506,7 +473,7 @@ while currentWave <= 4 do
                 -- Forzar movimiento hacia el NPC más cercano
                 local stuckNPC, stuckDistance = getClosestNPC()
                 if stuckNPC and stuckNPC:FindFirstChild("HumanoidRootPart") then
-                    
+                    print("Reposicionando hacia NPC más cercano")
                     local npcPos = stuckNPC.HumanoidRootPart.Position
                     rootPart.CFrame = CFrame.new(npcPos.X, npcPos.Y + 8, npcPos.Z)
                     task.wait(0.5)
@@ -516,18 +483,18 @@ while currentWave <= 4 do
                 -- y se han alcanzado los intentos máximos, forzamos la eliminación de los NPCs.
                 if currentWave == 5 then
                     local currentDistance = (rootPart.Position - wave5Pos).Magnitude
-                    
+                    print("Posición Wave 5 detectada. Distancia:", currentDistance, "StuckAttempts:", stuckAttempts)
                     
                     -- Si estamos en la posición correcta, forzamos el ataque a los NPCs
                     if currentDistance < 1 then
-                        
+                        print("En posición correcta para Wave 5, forzando ataque a NPCs...")
                         
                         -- Forzar el ataque a todos los NPCs
                         for _, npc in ipairs(workspace.NPCs:GetChildren()) do
                             if npc and npc:FindFirstChild("HumanoidRootPart") then
                                 -- Forzar persecución y ataque al NPC
                                 isChasingNPC = true
-                                local npcPos = npc.HumanoidRootPart.Positiona
+                                local npcPos = npc.HumanoidRootPart.Position
                                 
                                 -- Moverse cerca del NPC
                                 rootPart.CFrame = CFrame.new(npcPos.X, npcPos.Y + 8, npcPos.Z)
@@ -555,7 +522,7 @@ while currentWave <= 4 do
                 end
 
                 if stuckAttempts >= maxStuckAttempts then
-                    
+                    print("Máximo número de intentos alcanzado, reiniciando wave...")
                     break
                 end
             end
@@ -566,16 +533,16 @@ while currentWave <= 4 do
     end
     
     if stuckAttempts >= maxStuckAttempts then
-        
+        print("Reiniciando Wave " .. currentWave)
         continue
     end
     
-    
+    print("Wave " .. currentWave .. " completada")
     task.wait(1)
     
     -- Solo para wave 2, secuencia especial después de completarla
     if currentWave == 2 then
-        
+        print("Wave 2 completada, iniciando secuencia especial para wave 3...")
         isWaveTransitioning = true
         cancelCurrentTween()
         
@@ -585,12 +552,12 @@ while currentWave <= 4 do
         task.wait(2)
         
         -- Subir directo a altura 60 (teleport)
-        
+        print("Subiendo a altura 60...")
         rootPart.CFrame = CFrame.new(rootPart.Position.X, 60, rootPart.Position.Z)
         
         
         -- TWEEN a la posición 58, 52, 22 (no TP, se utiliza tween)
-        
+        print("Moviendo a la primera posición con tween...")
         local targetCF = CFrame.new(58, 52, 22)
         local distance = (targetCF.Position - rootPart.Position).Magnitude
         local tweenInfo = TweenInfo.new(
@@ -605,7 +572,7 @@ while currentWave <= 4 do
      
         
         -- Segunda posición (tween)
-        
+        print("Moviendo a segunda posición...")
         targetCF = CFrame.new(-23, 60, 15)
         distance = (targetCF.Position - rootPart.Position).Magnitude
         tweenInfo = TweenInfo.new(
@@ -620,7 +587,7 @@ while currentWave <= 4 do
       
         
         -- Tercera posición (tween)
-        
+        print("Moviendo a tercera posición...")
         targetCF = CFrame.new(-50, 82, 17)
         distance = (targetCF.Position - rootPart.Position).Magnitude
         tweenInfo = TweenInfo.new(
@@ -635,7 +602,7 @@ while currentWave <= 4 do
       
         
         -- Cuarta posición (tween)
-        
+        print("Moviendo a cuarta posición...")
         targetCF = CFrame.new(-95, 128, 18)
         distance = (targetCF.Position - rootPart.Position).Magnitude
         tweenInfo = TweenInfo.new(
@@ -650,7 +617,7 @@ while currentWave <= 4 do
   
         
         -- Quinta posición (tween)
-        
+        print("Moviendo a quinta posición...")
         targetCF = CFrame.new(-122, 131, 19)
         distance = (targetCF.Position - rootPart.Position).Magnitude
         tweenInfo = TweenInfo.new(
@@ -665,7 +632,7 @@ while currentWave <= 4 do
  
         
         -- Posición final (wave 3) (tween)
-        
+        print("Moviendo a posición final (wave 3)...")
         targetCF = CFrame.new(-241, 129, 9)
         distance = (targetCF.Position - rootPart.Position).Magnitude
         tweenInfo = TweenInfo.new(
@@ -686,7 +653,7 @@ while currentWave <= 4 do
     end
     
     if currentWave == 3 then
-        
+        print("Wave 3 completada, iniciando transición especial a Wave 4...")
         isWaveTransitioning = true
         cancelCurrentTween()
         
@@ -694,7 +661,7 @@ while currentWave <= 4 do
         task.wait(2)
         
         -- Primero, regresar a la posición principal de Wave 3 (-241, 129, 9)
-        
+        print("Regresando a la posición principal de Wave 3 (-241, 129, 9)...")
         local targetCF = CFrame.new(-241, 129, 9)
         local distance = (targetCF.Position - rootPart.Position).Magnitude
         local tweenInfo = TweenInfo.new(distance / speed, Enum.EasingStyle.Linear)
@@ -704,7 +671,7 @@ while currentWave <= 4 do
         task.wait(1)
         
         -- Luego, moverse a la posición intermedia (-300, 125, 48)
-        
+        print("Moviéndose a la posición intermedia (-300, 125, 48)...")
         targetCF = CFrame.new(-300, 125, 48)
         distance = (targetCF.Position - rootPart.Position).Magnitude
         tweenInfo = TweenInfo.new(distance / speed, Enum.EasingStyle.Linear)
@@ -714,7 +681,7 @@ while currentWave <= 4 do
         
    
         -- Por último, moverse a la posición final de Wave 4 (-367, 164, 47)
-        
+        print("Moviendo a Wave 4 (-367, 164, 47)...")
         targetCF = CFrame.new(-338, 151, 47)
         distance = (targetCF.Position - rootPart.Position).Magnitude
         tweenInfo = TweenInfo.new(distance / speed, Enum.EasingStyle.Linear)
@@ -723,7 +690,7 @@ while currentWave <= 4 do
         tween.Completed:Wait()
         
         
-        
+        print("Moviendo a Wave 4 (-472, 244, 47)...")
         targetCF = CFrame.new(-364, 169, 46)
         distance = (targetCF.Position - rootPart.Position).Magnitude
         tweenInfo = TweenInfo.new(distance / speed, Enum.EasingStyle.Linear)
@@ -732,7 +699,7 @@ while currentWave <= 4 do
         tween.Completed:Wait()
         
         
-        
+        print("Moviendo a Wave 4 (-475, 252, 47)...")
         targetCF = CFrame.new(-397, 188, 46)
         distance = (targetCF.Position - rootPart.Position).Magnitude
         tweenInfo = TweenInfo.new(distance / speed, Enum.EasingStyle.Linear)
@@ -760,20 +727,20 @@ while currentWave <= 4 do
     -- Preparar siguiente wave
     currentWave = currentWave + 1
     if currentWave <= 4 then
-        
+        print("Moviendo a Wave " .. currentWave)
         isWaveTransitioning = true
         
         local nextPos = wavePositions[currentWave]
         local moveSuccess = moveToNextWave(nextPos)
         
         if not moveSuccess then
-            
+            print("No se pudo mover a la siguiente wave")
             break
         end
         
         -- Agregar espera específica después del tween para Wave 2
         if currentWave == 2 then
-            
+            print("Posición de Wave 2 alcanzada - Esperando 5 segundos...")
             task.wait(6.5)  -- Espera de 5 segundos después de llegar a la posición
         end
         
@@ -781,11 +748,11 @@ while currentWave <= 4 do
         task.wait(1)
     end
 end
-
+print("¡Waves 1-4 completadas!")
 
 task.wait(4)  -- Espera 10 segundos
 
-
+print("Wave 4 completada, esperando TP a Wave 5...")
 task.wait(5)  -- Esperar 5 segundos después de Wave 4
 
 -- Esperar hasta que el jugador sea teletransportado a la posición de Wave 5
@@ -795,7 +762,7 @@ local isTPed = false
 while not isTPed do
     local distance = (rootPart.Position - wave5TPPosition).Magnitude
     if distance <= 100 then
-        
+        print("TP detectado a Wave 5, iniciando secuencia de ataque")
         isTPed = true
     end
     task.wait(0.1)
@@ -803,7 +770,7 @@ end
 
 -- Waves 5-6 (similar a waves 1-4)
 while currentWave >= 5 and currentWave <= 6 do
-    
+    print("Iniciando Wave " .. currentWave)
     
     -- Esperar NPCs (Leo o Cupid)
     repeat
@@ -815,12 +782,13 @@ while currentWave >= 5 and currentWave <= 6 do
         local leo = workspace.NPCs:GetChildren()[1]
         if leo and leo:FindFirstChild("HumanoidRootPart") then
             leoInitialCFrame = leo.HumanoidRootPart.CFrame
-            
+            print("CFrame inicial de Leo guardado")
+        end
     elseif currentWave == 8 then
         local cupid = workspace.NPCs:GetChildren()[1]
         if cupid and cupid:FindFirstChild("HumanoidRootPart") then
             cupidInitialCFrame = cupid.HumanoidRootPart.CFrame
-            
+            print("CFrame inicial de Cupid Queen guardado")
         end
     end
     
@@ -831,7 +799,7 @@ while currentWave >= 5 and currentWave <= 6 do
         
         -- Manejo de vida baja para Leo y Cupid
         if health < 300 then
-            
+            print("¡Vida baja! Retrocediendo...")
             
             if currentWave == 7 and leoInitialCFrame then
                 -- Retroceso específico para Leo
@@ -855,7 +823,7 @@ while currentWave >= 5 and currentWave <= 6 do
                 task.wait(0.1)
                 health = getCurrentHealth()
             until health >= 500
-            
+            print("Vida recuperada, volviendo al combate")
         else
             -- Procesar NPCs normalmente si la vida está bien
             processNPCs()
@@ -866,12 +834,12 @@ while currentWave >= 5 and currentWave <= 6 do
     
     -- Manejo de finalización de wave
     if not areNPCsAlive() then
-        
+        print("Wave " .. currentWave .. " completada")
         currentWave = currentWave + 1
         
         -- Espera especial entre Leo y Cupid Queen
         if currentWave == 8 then
-            
+            print("Esperando aparición de Cupid Queen...")
             task.wait(3)
         end
     end
@@ -879,7 +847,7 @@ end
 
 -- Waves 7-8 (Leo y Cupid)
 while currentWave >= 7 and currentWave <= 8 do
-    
+    print("Iniciando Wave " .. currentWave .. " (Boss Fight)")
     
     -- Esperar NPCs (Leo o Cupid)
     repeat
@@ -891,13 +859,13 @@ while currentWave >= 7 and currentWave <= 8 do
         local leo = workspace.NPCs:GetChildren()[1]
         if leo and leo:FindFirstChild("HumanoidRootPart") then
             leoInitialCFrame = leo.HumanoidRootPart.CFrame
-            
+            print("CFrame inicial de Leo guardado")
         end
     elseif currentWave == 8 then
         local cupid = workspace.NPCs:GetChildren()[1]
         if cupid and cupid:FindFirstChild("HumanoidRootPart") then
             cupidInitialCFrame = cupid.HumanoidRootPart.CFrame
-            
+            print("CFrame inicial de Cupid Queen guardado")
         end
     end
     
@@ -907,7 +875,7 @@ while currentWave >= 7 and currentWave <= 8 do
         
         -- Manejo de vida baja para Leo y Cupid
         if health < 300 then
-            
+            print("¡Vida baja! Iniciando secuencia de recuperación... Vida actual:", health)
             
             -- Primero tween a la posición inicial de waves 5-6-7
             local safePos = Vector3.new(-1286, 140, 194)
@@ -921,7 +889,7 @@ while currentWave >= 7 and currentWave <= 8 do
                 CFrame = CFrame.new(safePos)
             })
             
-            
+            print("Retrocediendo a posición segura general")
             tween:Play()
             tween.Completed:Wait()
             task.wait(0.5)
@@ -930,10 +898,10 @@ while currentWave >= 7 and currentWave <= 8 do
             while health < 600 and boss and boss:FindFirstChild("HumanoidRootPart") do
                 local bossDistance = (boss.HumanoidRootPart.Position - rootPart.Position).Magnitude
                 health = getCurrentHealth()  -- Actualizar la vida en cada iteración
-                
+                print("Esperando recuperación... Vida actual:", health)
                 
                 if bossDistance < 100 then  -- Si el boss está demasiado cerca
-                    
+                    print("Boss demasiado cerca, retrocediendo a su posición inicial")
                     
                     -- Tween a la posición inicial del boss correspondiente
                     local targetCFrame
@@ -962,7 +930,7 @@ while currentWave >= 7 and currentWave <= 8 do
                 task.wait(0.1)
             end
             
-            
+            print("Vida recuperada a nivel seguro:", health, ". Volviendo al combate")
         else
             -- Procesar NPCs normalmente si la vida está bien
             processNPCs()
@@ -973,12 +941,12 @@ while currentWave >= 7 and currentWave <= 8 do
     
     -- Manejo de finalización de wave
     if not areNPCsAlive() then
-        
+        print("Wave " .. currentWave .. " completada")
         currentWave = currentWave + 1
         
         -- Espera especial entre Leo y Cupid Queen
         if currentWave == 8 then
-            
+            print("Esperando aparición de Cupid Queen...")
             task.wait(3)
         end
     end
@@ -990,7 +958,7 @@ while currentWave == 7 do  -- Wave de Leo
     local leo = workspace.NPCs:GetChildren()[1]
     
     if health and health < 200 then  -- Si la vida es menor a 200
-        
+        print("Vida baja detectada:", health, "- Iniciando modo recuperación")
         
         -- Cancelar cualquier proceso actual
         isWaveTransitioning = true
@@ -1007,7 +975,7 @@ while currentWave == 7 do  -- Wave de Leo
             rootPart.CFrame = CFrame.new(safePos)
             
             -- Esperar hasta recuperar 600 de vida
-            
+            print("Esperando recuperación de vida...")
             repeat
                 health = getCurrentHealth()
                 task.wait(0.1)
@@ -1019,7 +987,7 @@ while currentWave == 7 do  -- Wave de Leo
                 end
             until health >= 600 or not leo or not leo.Parent
             
-            
+            print("Vida recuperada:", health, "- Volviendo al combate")
         end
         
         isWaveTransitioning = false
@@ -1032,7 +1000,7 @@ while currentWave == 7 do  -- Wave de Leo
     
     -- Verificar si Leo sigue vivo
     if not areNPCsAlive() then
-        
+        print("Leo derrotado - Wave 7 completada")
         break
     end
 end
@@ -1042,7 +1010,7 @@ while currentWave == 8 do  -- Wave de Cupid Queen
     local cupid = workspace.NPCs:GetChildren()[1]
     
     if health and health < 200 then  -- Si la vida es menor a 200
-        
+        print("Vida baja detectada:", health, "- Iniciando modo recuperación")
         
         -- Cancelar cualquier proceso actual
         isWaveTransitioning = true
@@ -1059,7 +1027,7 @@ while currentWave == 8 do  -- Wave de Cupid Queen
             rootPart.CFrame = CFrame.new(safePos)
             
             -- Esperar hasta recuperar 600 de vida
-            
+            print("Esperando recuperación de vida...")
             repeat
                 health = getCurrentHealth()
                 task.wait(0.1)
@@ -1071,7 +1039,7 @@ while currentWave == 8 do  -- Wave de Cupid Queen
                 end
             until health >= 600 or not cupid or not cupid.Parent
             
-            
+            print("Vida recuperada:", health, "- Volviendo al combate")
         end
         
         isWaveTransitioning = false
@@ -1084,7 +1052,7 @@ while currentWave == 8 do  -- Wave de Cupid Queen
     
     -- Verificar si Cupid Queen sigue viva
     if not areNPCsAlive() then
-        
+        print("Cupid Queen derrotada - Wave 8 completada")
         break
     end
 end
