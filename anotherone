@@ -1,2 +1,1047 @@
 
-local v0=tonumber;local v1=string.byte;local v2=string.char;local v3=string.sub;local v4=string.gsub;local v5=string.rep;local v6=table.concat;local v7=table.insert;local v8=math.ldexp;local v9=getfenv or function() return _ENV;end ;local v10=setmetatable;local v11=pcall;local v12=select;local v13=unpack or table.unpack ;local v14=tonumber;local function v15(v16,v17,...) local v18=1;local v19;v16=v4(v3(v16,5),"..",function(v30) if (v1(v30,2)==81) then v19=v0(v3(v30,1,1));return "";else local v85=v2(v0(v30,16));if v19 then local v109=0;local v110;while true do if (v109==1) then return v110;end if (v109==0) then v110=v5(v85,v19);v19=nil;v109=1;end end else return v85;end end end);local function v20(v31,v32,v33) if v33 then local v86=0 -0 ;local v87;while true do if (v86==(0 + 0)) then v87=(v31/(2^(v32-((879 -(282 + 595)) -1))))%((3 -1)^(((v33-(2 -1)) -(v32-(620 -(555 + 64)))) + (932 -(857 + 74)))) ;return v87-(v87%(569 -(367 + (1838 -(1523 + 114))))) ;end end else local v88=2^(v32-1) ;return (((v31%(v88 + v88))>=v88) and (928 -(214 + 713))) or (0 + 0) ;end end local function v21() local v34=v1(v16,v18,v18);v18=v18 + 1 ;return v34;end local function v22() local v35,v36=v1(v16,v18,v18 + 2 + 0 );v18=v18 + (2 -0) ;return (v36 * (1321 -(68 + 997))) + v35 ;end local function v23() local v37=1270 -(226 + (1394 -(87 + 263))) ;local v38;local v39;local v40;local v41;while true do if (v37==(4 -3)) then return (v41 * ((16777513 -(67 + 113)) -(32 + 85))) + (v40 * (64226 + 1310)) + (v39 * (57 + 199)) + v38 ;end if (v37==(957 -(892 + 65))) then v38,v39,v40,v41=v1(v16,v18,v18 + (7 -4) );v18=v18 + (6 -2) ;v37=1 -0 ;end end end local function v24() local v42=v23();local v43=v23();local v44=1 + 0 ;local v45=(v20(v43,1,20) * (((4 + 0) -2)^(24 + 8))) + v42 ;local v46=v20(v43,812 -(368 + 423) ,123 -92 );local v47=((v20(v43,984 -(802 + 150) )==1) and  -(2 -1)) or ((3 -2) -0) ;if (v46==(0 + (18 -(10 + 8)))) then if (v45==(997 -((3519 -2604) + 82))) then return v47 * (0 -(442 -(416 + 26))) ;else v46=1 + 0 ;v44=0;end elseif (v46==(2691 -644)) then return ((v45==((3789 -2602) -(1069 + 118))) and (v47 * ((1 + 0)/(0 -0)))) or (v47 * NaN) ;end return v8(v47,v46-(2237 -1214) ) * (v44 + (v45/((1 + 1)^(92 -40)))) ;end local function v25(v48) local v49=772 -(201 + 571) ;local v50;local v51;while true do if (v49==((2 + 2) -1)) then return v6(v51);end if (v49==(8 -6)) then v51={};for v111=439 -((1030 -(261 + 624)) + (520 -227)) , #v50 do v51[v111]=v2(v1(v3(v50,v111,v111)));end v49=433 -(44 + 386) ;end if (v49==1) then v50=v3(v16,v18,(v18 + v48) -((1083 -(1020 + 60)) -2) );v18=v18 + v48 ;v49=1488 -(998 + 488) ;end if (v49==(0 + 0)) then v50=nil;if  not v48 then v48=v23();if (v48==0) then return "";end end v49=1 + 0 ;end end end local v26=v23;local function v27(...) return {...},v12("#",...);end local function v28() local v52=(function() return function(v89,v90,v91,v92,v93,v94,v95,v96) local v89=(function() return 0 + 0 ;end)();local v90=(function() return;end)();local v92=(function() return;end)();while true do if (v89==(202 -(14 + 188))) then local v117=(function() return 675 -(534 + 141) ;end)();local v118=(function() return;end)();while true do if (v117==(0 + 0)) then v118=(function() return 0 -0 ;end)();while true do if (v118~=0) then else v90=(function() return v91();end)();v92=(function() return nil;end)();v118=(function() return 1;end)();end if (v118==1) then v89=(function() return  #"~";end)();break;end end break;end end end if ( #"["==v89) then if (v90== #",") then v92=(function() return v91()~=(0 -0) ;end)();elseif (v90==(1 + 1)) then v92=(function() return v93();end)();elseif (v90== #"91(") then v92=(function() return v94();end)();end v95[v96]=(function() return v92;end)();break;end end return v89,v90,v91,v92,v93,v94,v95,v96;end;end)();local v53=(function() return function(v97,v98,v99) local v100=(function() return 0;end)();while true do if (v100~=(0 + 0)) then else local v120=(function() return 0;end)();local v121=(function() return;end)();while true do if (v120==(1000 -(451 + 549))) then v121=(function() return 0 + 0 ;end)();while true do if (0==v121) then v97[v98-#"{" ]=(function() return v99();end)();return v97,v98,v99;end end break;end end end end end;end)();local v54=(function() return {};end)();local v55=(function() return {};end)();local v56=(function() return {};end)();local v57=(function() return {v54,v55,nil,v56};end)();local v58=(function() return v23();end)();local v59=(function() return {};end)();for v67= #"}",v58 do FlatIdent_8199B,Type,v21,Cons,v24,v25,v59,v67=(function() return v52(FlatIdent_8199B,Type,v21,Cons,v24,v25,v59,v67);end)();end v57[ #"19("]=(function() return v21();end)();for v68= #"}",v23() do local v69=(function() return v21();end)();if (v20(v69, #",", #"\\")==(0 -0)) then local v104=(function() return 0 -0 ;end)();local v105=(function() return;end)();local v106=(function() return;end)();local v107=(function() return;end)();local v108=(function() return;end)();while true do if (v104~=(0 -0)) then else local v122=(function() return 0;end)();while true do if (v122==(1 -0)) then v104=(function() return 1 -0 ;end)();break;end if (v122~=(0 + 0)) then else local v124=(function() return 0;end)();while true do if ((1 + 0)~=v124) then else v122=(function() return 397 -(115 + 281) ;end)();break;end if (0~=v124) then else v105=(function() return 0;end)();v106=(function() return nil;end)();v124=(function() return 2 -1 ;end)();end end end end end if (v104~=(1 -0)) then else local v123=(function() return 0;end)();while true do if (v123==(342 -(218 + 123))) then v104=(function() return 2 + 0 ;end)();break;end if (v123==(0 -0)) then v107=(function() return nil;end)();v108=(function() return nil;end)();v123=(function() return 3 -2 ;end)();end end end if (v104==(869 -(550 + 317))) then while true do if ((2 -0)==v105) then local v125=(function() return 0;end)();local v126=(function() return;end)();while true do if (v125~=(560 -(306 + 254))) then else v126=(function() return 0 -0 ;end)();while true do if (1~=v126) then else v105=(function() return  #"xxx";end)();break;end if (0~=v126) then else if (v20(v107, #"{", #"]")~= #",") then else v108[2]=(function() return v59[v108[3 -1 ]];end)();end if (v20(v107,5 -3 ,1469 -(899 + 568) )== #">") then v108[ #"nil"]=(function() return v59[v108[ #"19("]];end)();end v126=(function() return 1;end)();end end break;end end end if ( #"gha"~=v105) then else if (v20(v107, #"-19", #"-19")~= #":") then else v108[ #"?id="]=(function() return v59[v108[ #"0313"]];end)();end v54[v68]=(function() return v108;end)();break;end if (v105== #",") then local v128=(function() return 0;end)();while true do if (v128~=(285 -(134 + 151))) then else v108=(function() return {v22(),v22(),nil,nil};end)();if (v106==0) then local v192=(function() return 1665 -(970 + 695) ;end)();while true do if (v192~=(0 -0)) then else v108[ #"xnx"]=(function() return v22();end)();v108[ #"?id="]=(function() return v22();end)();break;end end elseif (v106== #"]") then v108[ #"-19"]=(function() return v23();end)();elseif (v106==(292 -(60 + 230))) then v108[ #"nil"]=(function() return v23() -(2^(2006 -(582 + 1408))) ;end)();elseif (v106~= #"91(") then else local v236=(function() return 0 -0 ;end)();local v237=(function() return;end)();while true do if (v236==0) then v237=(function() return 0;end)();while true do if (v237~=(572 -(426 + 146))) then else v108[ #"xnx"]=(function() return v23() -(2^(19 -3)) ;end)();v108[ #"0313"]=(function() return v22();end)();break;end end break;end end end v128=(function() return 1;end)();end if (v128~=(3 -2)) then else v105=(function() return 1826 -(1195 + 629) ;end)();break;end end end if (v105~=0) then else local v129=(function() return 0 -0 ;end)();local v130=(function() return;end)();while true do if (v129~=(241 -(187 + 54))) then else v130=(function() return 0;end)();while true do if (v130~=(0 -0)) then else v106=(function() return v20(v69,1 + 1 , #"xxx");end)();v107=(function() return v20(v69, #".com",6);end)();v130=(function() return 1025 -(706 + 318) ;end)();end if (v130==(1252 -(721 + 530))) then v105=(function() return  #":";end)();break;end end break;end end end end break;end end end end for v70= #"<",v23() do v55,v70,v28=(function() return v53(v55,v70,v28);end)();end return v57;end local function v29(v61,v62,v63) local v64=v61[1272 -(945 + 326) ];local v65=v61[2];local v66=v61[3];return function(...) local v71=v64;local v72=v65;local v73=v66;local v74=v27;local v75=2 -1 ;local v76= -(1 + 0);local v77={};local v78={...};local v79=v12("#",...) -1 ;local v80={};local v81={};for v101=0 + 0 ,v79 do if (v101>=v73) then v77[v101-v73 ]=v78[v101 + 1 ];else v81[v101]=v78[v101 + (1501 -((4813 -3405) + 92)) ];end end local v82=(v79-v73) + 1 ;local v83;local v84;while true do v83=v71[v75];v84=v83[1];if (v84<=17) then if (v84<=(1094 -(461 + 625))) then if (v84<=(1291 -(993 + 295))) then if (v84<=(1 + 0)) then if ((983<1808) and (v84>(1171 -(418 + 753)))) then local v133=v83[1 + (1019 -(697 + 321)) ];local v134,v135=v74(v81[v133](v13(v81,v133 + 1 + 0 ,v83[1 + (5 -3) ])));v76=(v135 + v133) -(1 + 0) ;local v136=(1120 -591) -((935 -529) + 123) ;for v185=v133,v76 do v136=v136 + ((689 + 1081) -(1749 + 20)) ;v81[v185]=v134[v136];end else v81[v83[1 + 1 ]]=v81[v83[3]][v83[1326 -(1249 + (136 -63)) ]];end elseif (v84>(1 + 1)) then local v139=0;local v140;local v141;while true do if (v139==(1145 -(466 + 679))) then v140=v83[4 -2 ];v141=v81[v83[8 -5 ]];v139=1;end if (v139==(1901 -(106 + (4809 -3015)))) then v81[v140 + 1 ]=v141;v81[v140]=v141[v83[2 + (1229 -(322 + 905)) ]];break;end end else local v142=v83[1 + 1 ];v81[v142](v13(v81,v142 + (2 -1) ,v76));end elseif (v84<=(13 -8)) then if (v84==4) then local v143=v83[116 -(4 + 110) ];local v144=v81[v83[587 -(57 + 527) ]];v81[v143 + (1428 -(41 + 1386)) ]=v144;v81[v143]=v144[v83[107 -(17 + 86) ]];else v81[v83[2 + 0 ]]=v81[v83[3]];end elseif ((v84<=((624 -(602 + 9)) -7)) or (2150<=1197)) then v81[v83[5 -3 ]]={};elseif (v84==(173 -(122 + (1233 -(449 + 740))))) then v81[v83[2 -0 ]]=v81[v83[9 -6 ]][v83[4 + 0 ]];else local v195=v83[1 + 1 ];v81[v195]=v81[v195](v13(v81,v195 + (1 -0) ,v76));end elseif (v84<=(77 -((902 -(826 + 46)) + 35))) then if (v84<=(7 + 3)) then if (v84==(1266 -(1043 + 214))) then if (v81[v83[7 -5 ]]==v83[(2163 -(245 + 702)) -(323 + 889) ]) then v75=v75 + (2 -1) ;else v75=v83[(1841 -1258) -(361 + 219) ];end else v75=v83[323 -(53 + 267) ];end elseif (v84==11) then for v188=v83[2],v83[1 + 1 + 1 ] do v81[v188]=nil;end else local v152=v83[415 -(15 + 398) ];v81[v152]=v81[v152](v13(v81,v152 + (983 -(18 + 964)) ,v76));end elseif ((3769>=1173) and (v84<=14)) then if (v84>(48 -35)) then local v154=0 + 0 ;local v155;local v156;local v157;local v158;while true do if (v154==(0 + 0)) then v155=v83[852 -(20 + 830) ];v156,v157=v74(v81[v155](v81[v155 + 1 + 0 ]));v154=1;end if (v154==(128 -(116 + 10))) then for v216=v155,v76 do local v217=0 + 0 ;while true do if ((1485==1485) and (v217==((2636 -(260 + 1638)) -(542 + 196)))) then v158=v158 + 1 ;v81[v216]=v156[v158];break;end end end break;end if ((v154==(1 -0)) or (3315<=2782)) then v76=(v157 + v155) -(1 + 0) ;v158=0 + 0 ;v154=(441 -(382 + 58)) + 1 ;end end else for v190=v83[4 -2 ],v83[7 -4 ] do v81[v190]=nil;end end elseif ((v84<=(1566 -(1126 + 425))) or (876>=2964)) then local v159=0 -0 ;local v160;local v161;local v162;local v163;while true do if (v159==(2 + 0)) then for v218=v160,v76 do local v219=405 -(118 + 287) ;while true do if (v219==((0 -0) -0)) then v163=v163 + (1122 -(118 + 1003)) ;v81[v218]=v161[v163];break;end end end break;end if (v159==(2 -1)) then v76=(v162 + v160) -(378 -(142 + 235)) ;v163=0;v159=(26 -17) -7 ;end if (v159==(0 + 0)) then v160=v83[979 -(553 + 424) ];v161,v162=v74(v81[v160](v81[v160 + (1 -(1205 -(902 + 303))) ]));v159=1 + 0 ;end end elseif (v84==(16 + 0)) then v81[v83[2 + 0 ]]=v83[2 + 1 ]~=(0 + 0) ;elseif ((v81[v83[4 -2 ]]==v83[4]) or (2232>2497)) then v75=v75 + 1 ;else v75=v83[7 -4 ];end elseif ((v84<=(58 -32)) or (2110<=332)) then if (v84<=(7 + 14)) then if ((3686>3172) and (v84<=19)) then if ((v84==(86 -(149 -81))) or (4474<820)) then v81[v83[755 -(239 + 514) ]]();else v81[v83[1 + 1 ]]=v63[v83[1332 -(797 + 532) ]];end elseif (v84>(15 + 5)) then do return;end else v81[v83[1 + 1 ]]=v81[v83[3]];end elseif (v84<=((127 -74) -(3 + 27))) then if ((4279>=2882) and (v84>(1712 -(1121 + 569)))) then v81[v83[1204 -(373 + 829) ]]=v83[734 -(476 + 255) ];else local v170=(1344 -(22 + 192)) -(369 + 761) ;local v171;while true do if ((0 + 0)==v170) then v171=v83[2 -0 ];v81[v171]=v81[v171](v13(v81,v171 + (1 -0) ,v83[241 -(64 + 174) ]));break;end end end elseif ((v84<=(4 + 20)) or (2029>=3521)) then v81[v83[2 -(683 -(483 + 200)) ]][v83[339 -(144 + 192) ]]=v83[220 -((1505 -(1404 + 59)) + 174) ];elseif ((v84>(19 + 6)) or (2037>=4642)) then local v199=v83[2 + (0 -0) ];v81[v199](v13(v81,v199 + 1 + 0 ,v76));else local v200=1504 -(363 + 1141) ;local v201;while true do if ((1580 -(1183 + 397))==v200) then v201=v83[2];v81[v201]=v81[v201](v13(v81,v201 + (2 -(1 -0)) ,v83[(768 -(468 + 297)) + 0 ]));break;end end end elseif (v84<=(23 + (569 -(334 + 228)))) then if (v84<=((6756 -4753) -(1913 + (143 -81)))) then if (v84==((32 -14) + 9)) then v81[v83[2]][v83[7 -4 ]]=v83[1937 -(565 + 1368) ];else do return;end end elseif (v84==(108 -79)) then local v176=1661 -(1477 + 53 + 131) ;local v177;local v178;local v179;local v180;while true do if (v176==(2 -0)) then for v221=v177,v76 do local v222=0;while true do if (v222==(0 + 0)) then v180=v180 + 1 ;v81[v221]=v178[v180];break;end end end break;end if (v176==0) then v177=v83[858 -(564 + 292) ];v178,v179=v74(v81[v177](v13(v81,v177 + 1 ,v83[4 -1 ])));v176=2 -1 ;end if ((1720<4458) and (v176==(305 -(244 + 60)))) then v76=(v179 + v177) -(1 + 0) ;v180=476 -(41 + 435) ;v176=1003 -(938 + 63) ;end end else v75=v83[3 + 0 ];end elseif (v84<=32) then if (v84==(1156 -(936 + 189))) then v81[v83[1 + 1 ]]=v83[1616 -(1565 + 48) ];else v81[v83[2 + 0 ]]={};end elseif ((v84<=(1171 -(782 + 356))) or (436>3021)) then v81[v83[269 -(176 + 91) ]]();elseif ((713<=847) and (v84==(88 -54))) then v81[v83[(238 -(141 + 95)) -0 ]]=v63[v83[3]];else v81[v83[1094 -(975 + 117) ]]=v83[1878 -(157 + 1718) ]~=(0 + 0) ;end v75=v75 + (3 -2) ;end end;end return v29(v28(),{},v17)(...);end return v15("LOL!153Q00028Q0003043Q0067616D6503073Q00506C6163654964022Q00805BC6CAD941026Q00F03F03053Q004172656E61030A3Q004765745365727669636503113Q005265706C69636174656453746F72616765030C3Q0057616974466F724368696C6403063Q004576656E747303083Q00706C617967616D65030A3Q004669726553657276657203063Q00756E7061636B022Q00601AD3B1F741030F3Q00437570696427732044756E67656F6E03053Q005175657565030C3Q00496E766F6B65536572766572022Q00A08EBC470542030A3Q006C6F6164737472696E6703073Q00482Q747047657403453Q00682Q7470733A2Q2F7261772E67697468756275736572636F6E74656E742E636F6D2F4B6F6B697576753132332F47504F2F726566732F68656164732F6D61696E2F2Q672Q6600533Q0012173Q00014Q000B000100013Q0026093Q00020001000100041E3Q000200012Q000600026Q0014000100023Q001213000200023Q00202Q000200020003002609000200220001000400041E3Q00220001001217000200013Q0026090002000B0001000100041E3Q000B00012Q000600033Q000100301B0003000500062Q0014000100033Q001213000300023Q002003000300030007001217000500084Q00160003000500020020030003000300090012170005000A4Q00160003000500020020030003000300090012170005000B4Q001600030005000200200300030003000C0012130005000D4Q0014000600014Q000E000500064Q001A00033Q000100041E3Q0052000100041E3Q000B000100041E3Q00520001001213000200023Q00202Q000200020003002609000200440001000E00041E3Q00440001001217000200014Q000B000300033Q002609000200280001000100041E3Q00280001001217000300013Q0026090003002B0001000100041E3Q002B00012Q000600043Q000100301B00040005000F2Q0014000100043Q001213000400023Q002003000400040007001217000600084Q00160004000600020020030004000400090012170006000A4Q0016000400060002002003000400040009001217000600104Q00160004000600020020030004000400110012130006000D4Q0014000700014Q000E000600074Q001A00043Q000100041E3Q0052000100041E3Q002B000100041E3Q0052000100041E3Q0028000100041E3Q00520001001213000200023Q00202Q000200020003002609000200520001001200041E3Q00520001001213000200133Q001213000300023Q002003000300030014001217000500154Q0023000600014Q001D000300064Q000800023Q00022Q002100020001000100041E3Q0052000100041E3Q000200012Q00153Q00017Q00",v9(),...);
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local rootPart = character:WaitForChild("HumanoidRootPart")
+
+-- Flags de control
+local magmaSwampInProgress = false
+local currentTween = nil
+local isWaveTransitioning = false
+local isChasingNPC = false
+local concasserActive = false
+
+-- BodyVelocity para control de movimiento
+local bodyVelocity = Instance.new("BodyVelocity")
+bodyVelocity.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+bodyVelocity.Velocity = Vector3.new(0, 0, 0)
+bodyVelocity.Parent = rootPart
+
+-- Configuración de posiciones
+local requiredPosition = Vector3.new(404, 19, -52)
+local requiredRadius = 100
+local SAFE_HEIGHT = 200
+local DIRECT_CHASE_RADIUS = 165
+local STAY_WITH_NPC_RADIUS = 40
+
+local phase1 = Vector3.new(361, 78, 38)
+local wavePositions = {
+    [1] = phase1,
+    [2] = Vector3.new(124, SAFE_HEIGHT, 21),
+    [3] = Vector3.new(-243, 200, 4),
+    [4] = Vector3.new(-233, 127, 52),
+    [5] = Vector3.new(-1286, 140, 194),
+    [6] = Vector3.new(-1286, 140, 194),
+    [7] = Vector3.new(-1286, 140, 194)
+}
+
+local wave2ReturnPos = Vector3.new(123, 127, 21)  -- Posición de retorno después de wave 2
+
+-- Se cambia el cooldown de Magma Swamp de 2 a 8.5 segundos
+local lastMagmaSwampActivation = 0
+local MIN_MAGMA_SWAMP_COOLDOWN = 0.5  -- Cambiado de 2 a 8.5
+
+-- Agregar variable global para almacenar el CFrame inicial de Leo
+local leoInitialCFrame = nil
+
+-- Definir la posición final "oficial" de la Wave 5 (ajusta los valores según corresponda)
+local wave5Pos = Vector3.new(-241, 129, 9)
+
+-- Variables para guardar posiciones importantes
+local cupidInitialCFrame = nil
+local wave7Position = Vector3.new(-1286, 140, 194)
+
+-- Mover esta función al inicio del script, antes de su primer uso
+local function getCurrentHealth()
+    if not player then 
+        print("No se pudo encontrar LocalPlayer")
+        return nil 
+    end
+    
+    local character = player.Character or player.CharacterAdded:Wait()
+    if not character then
+        print("No se pudo encontrar Character")
+        return nil
+    end
+    
+    local humanoid = character:FindFirstChild("Humanoid")
+    if not humanoid then
+        print("No se pudo encontrar Humanoid")
+        return nil
+    end
+    
+    local health = humanoid.Health
+    if health then
+        local roundedHealth = math.floor(health)
+        print("Vida actual:", roundedHealth)
+        return roundedHealth
+    else
+        print("La vida es nil")
+        return nil
+    end
+end
+
+local function cancelCurrentTween()
+    if currentTween then
+        currentTween:Cancel()
+        currentTween = nil
+    end
+end
+
+local function tweenToTarget(targetPosition)
+    if isWaveTransitioning then return end
+    
+    cancelCurrentTween()
+    
+    local speed = 100
+    local distance = (targetPosition - rootPart.Position).Magnitude
+    local tweenTime = distance / speed
+    
+    currentTween = TweenService:Create(rootPart, 
+        TweenInfo.new(tweenTime, Enum.EasingStyle.Linear),
+        {Position = targetPosition}
+    )
+    
+    currentTween:Play()
+    
+    local completed = false
+    local connection = currentTween.Completed:Connect(function()
+        completed = true
+    end)
+    
+    local startTime = tick()
+    while not completed and (tick() - startTime) < (tweenTime + 2) and not isWaveTransitioning do
+        task.wait(0.1)
+    end
+    
+    connection:Disconnect()
+    
+    if not completed and not isWaveTransitioning then
+        rootPart.Position = targetPosition
+    end
+end
+
+-- Sistema de Concasser continuo (solo se activa al inicio)
+local function startConcasserLoop()
+    if concasserActive then return end
+    concasserActive = true
+    
+    task.spawn(function()
+        while concasserActive do
+            local skillEvent = ReplicatedStorage:WaitForChild("Events"):WaitForChild("Skill")
+            local connection = RunService.Heartbeat:Connect(function()
+                local targetCFrame = rootPart.CFrame * CFrame.new(0, 100, 0)
+                skillEvent:InvokeServer("Concasser", { cf = targetCFrame })
+            end)
+            task.wait(0.5)
+            if connection then connection:Disconnect() end
+        end
+    end)
+end
+
+-- Función modificada para perseguir NPCs:
+-- - Si hay un NPC a menos de 25 unidades, se teletransporta (una sola vez) y se continúa siguiéndolo con tween.
+-- - Si el NPC está a más de 25 unidades, se hace tween directamente usando velocidad 35.
+-- - Si el AC detecta y empuja hacia atrás (se observa un aumento anómalo en la distancia), se reintenta el tween utilizando velocidad 100.
+local function chaseNPC(npc)
+    if not npc or not npc:FindFirstChild("HumanoidRootPart") then return end
+
+    isChasingNPC = true
+    local tween = nil
+    local speedNormal = 45      -- Velocidad para el tween normal
+    local speedRetry  = 100   -- Velocidad para reintentar el tween en caso de AC (anti-cheat)
+    local didTeleport = false -- Flag para asegurarse de que se haga TP solo una vez cuando el NPC está a ≤25
+    local prevDistance = math.huge
+
+    while npc 
+          and npc:FindFirstChild("HumanoidRootPart") 
+          and npc:FindFirstChild("Humanoid") 
+          and npc.Humanoid.Health > 0 
+          and not isWaveTransitioning do
+
+        local npcPos = npc.HumanoidRootPart.Position
+        local targetCF = CFrame.new(npcPos.X, npcPos.Y + 9, npcPos.Z)
+        local currDistance = (rootPart.Position - npcPos).Magnitude
+
+        if currDistance <= 25 then
+            -- Si el NPC está a menos de 25 unidades:
+            if not didTeleport then
+                if tween then tween:Cancel() end
+                print("TP por proximidad (distancia: "..currDistance..")")
+                rootPart.CFrame = targetCF  -- Realiza un TP solo una vez
+                didTeleport = true
+            else
+                -- Luego se sigue al NPC por tween con velocidad normal
+                if tween then tween:Cancel() end
+                local tweenInfo = TweenInfo.new(currDistance / speedNormal, Enum.EasingStyle.Linear)
+                tween = TweenService:Create(rootPart, tweenInfo, { CFrame = targetCF })
+                tween:Play()
+                tween.Completed:Wait()
+            end
+        else
+            -- Si el NPC está a más de 25 unidades, se realiza tween directo con velocidad normal
+            didTeleport = false  -- Reinicia la flag para próximas aproximaciones del NPC
+            if tween then tween:Cancel() end
+            local tweenInfo = TweenInfo.new(currDistance / speedNormal, Enum.EasingStyle.Linear)
+            tween = TweenInfo.new(currDistance / speedNormal, Enum.EasingStyle.Linear)
+            tween = TweenService:Create(rootPart, tweenInfo, { CFrame = targetCF })
+            tween:Play()
+            tween.Completed:Wait()
+        end
+
+        -- Detección de retroceso por AC:
+        -- Si la distancia actual supera la distancia previa en más de 5 unidades,
+        -- significa que el AC nos ha mandado hacia atrás, por lo que se reintenta con velocidad 100.
+        if currDistance > prevDistance + 5 then
+            print("AC detectado (distancia aumentó de "..prevDistance.." a "..currDistance.."); reintentando con tween a velocidad "..speedRetry)
+            if tween then tween:Cancel() end
+            local tweenInfoRetry = TweenInfo.new(currDistance / speedRetry, Enum.EasingStyle.Linear)
+            tween = TweenService:Create(rootPart, tweenInfoRetry, { CFrame = targetCF })
+            tween:Play()
+            tween.Completed:Wait()
+        end
+
+        prevDistance = currDistance
+        task.wait(0.05)
+    end
+
+    if tween then tween:Cancel() end
+    isChasingNPC = false
+end
+
+-- Función actualizada para activar Magma Swamp
+-- Se utiliza el CFrame del localplayer (rootPart.CFrame) directamente
+local function activateMagmaSwamp()
+    local skillEvent = ReplicatedStorage:WaitForChild("Events"):WaitForChild("Skill")
+    local result = skillEvent:InvokeServer("Magma Swamp")
+    if not result then
+        warn("Magma Swamp: resultado nil")
+        return false
+    end
+    local magmaSwampRemote = result[1]
+    local updateRemote = result[2]
+    if not (magmaSwampRemote and updateRemote) then
+        warn("Magma Swamp: magmaSwampRemote o updateRemote son nil.")
+        return false
+    end
+
+    local connection
+    connection = RunService.Heartbeat:Connect(function()
+        if character and rootPart then
+            updateRemote:FireServer(rootPart.CFrame)
+        else
+            if connection then connection:Disconnect() end
+        end
+    end)
+    task.wait(10)
+    if magmaSwampRemote then
+        magmaSwampRemote:InvokeServer()
+    end
+    if connection then connection:Disconnect() end
+    return true
+end
+
+local function getClosestNPC()
+    local closest, closestDist = nil, math.huge
+    
+    for _, npc in ipairs(workspace.NPCs:GetChildren()) do
+        if npc:FindFirstChild("HumanoidRootPart") and 
+           npc:FindFirstChild("Humanoid") and 
+           npc.Humanoid.Health > 0 then
+            local dist = (npc.HumanoidRootPart.Position - rootPart.Position).Magnitude
+            if dist < closestDist then
+                closest = npc
+                closestDist = dist
+            end
+        end
+    end
+    
+    return closest, closestDist
+end
+
+-- Función actualizada para procesar NPCs (siempre se ataca al más cercano)
+local function processNPCs()
+    if isWaveTransitioning then return end
+    
+    local targetNPC, distance = getClosestNPC()
+    if targetNPC then
+        if not isChasingNPC then
+            task.spawn(chaseNPC, targetNPC)
+        end
+        
+        if tick() - lastMagmaSwampActivation >= 2 and not isWaveTransitioning then
+            lastMagmaSwampActivation = tick()
+            task.spawn(function()
+                magmaSwampInProgress = true
+                activateMagmaSwamp()
+                magmaSwampInProgress = false
+            end)
+        end
+    else
+        magmaSwampInProgress = false
+    end
+end
+
+local function areNPCsAlive()
+    local found = false
+    for _, npc in ipairs(workspace.NPCs:GetChildren()) do
+        if npc:FindFirstChild("Humanoid") and npc.Humanoid.Health > 0 then
+            found = true
+            break
+        end
+    end
+    return found
+end
+
+-- Activar Buso Haki
+local function activateBuso()
+    local args = {
+        [1] = "Buso"
+    }
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Haki"):FireServer(unpack(args))
+end
+
+-- Sistema de bloqueo continuo
+task.spawn(function()
+    while true do
+        local args = {
+            [1] = true,
+            [2] = "Melee",
+            [3] = true
+        }
+        ReplicatedStorage:WaitForChild("Events")
+            :WaitForChild("Block"):InvokeServer(unpack(args))
+        task.wait(0.5)
+    end
+end)
+
+-- Secuencia principal mejorada
+while (rootPart.Position - requiredPosition).Magnitude > requiredRadius do
+    task.wait(0.1)
+end
+
+task.wait(3)
+
+-- Primero subir a altura segura
+print("Subiendo a altura segura inicial...")
+rootPart.CFrame = CFrame.new(rootPart.Position.X, SAFE_HEIGHT, rootPart.Position.Z)
+task.wait(1)
+
+-- Luego tween a wave 1
+print("Moviéndose a Wave 1...")
+local targetCF = CFrame.new(wavePositions[1])
+local tweenInfo = TweenInfo.new(
+    1.5,  -- Duración fija como en instatp
+    Enum.EasingStyle.Linear
+)
+
+local tween = TweenService:Create(rootPart, tweenInfo, {
+    CFrame = targetCF
+})
+
+tween:Play()
+tween.Completed:Wait()
+task.wait(1)
+
+-- Activar Concasser y Buso al inicio
+startConcasserLoop()
+activateBuso()
+
+local currentWave = 1
+
+-- Esperar a que aparezcan los NPCs de la primera wave
+print("Esperando NPCs de Wave 1...")
+while #workspace.NPCs:GetChildren() == 0 do
+    task.wait(0.1)
+end
+
+print("Wave 1 iniciada")
+tweenToTarget(wavePositions[1])
+task.wait(1)
+
+----------------------------------------------------------------------
+-- Función para mover a la siguiente wave (usando tween con velocidad fija)
+----------------------------------------------------------------------
+local function moveToNextWave(nextPos)
+    local attempts = 0
+    local maxAttempts = 3
+    local success = false
+    local speed = 100  -- Velocidad fija para calcular la duración del tween
+
+    while attempts < maxAttempts and not success do
+        attempts = attempts + 1
+        print("Transición a siguiente wave, intento " .. attempts)
+
+        -- Subir a una altura segura
+        rootPart.CFrame = CFrame.new(rootPart.Position.X, SAFE_HEIGHT, rootPart.Position.Z)
+        task.wait(1)
+
+        -- Tween horizontal hacia la posición destino
+        local targetCF = CFrame.new(nextPos.X, SAFE_HEIGHT, nextPos.Z)
+        local distance = (targetCF.Position - rootPart.Position).Magnitude
+        local tweenDuration = distance / speed
+        print("Distancia: " .. distance .. " | Duración del tween: " .. tweenDuration)
+
+        local tweenInfo = TweenInfo.new(tweenDuration, Enum.EasingStyle.Linear)
+        local tween = TweenService:Create(rootPart, tweenInfo, { CFrame = targetCF })
+        tween:Play()
+        tween.Completed:Wait()
+        task.wait(1)
+
+        -- Bajar a la posición final de la wave
+        rootPart.CFrame = CFrame.new(nextPos)
+        success = true
+        print("Transición completada a la siguiente wave.")
+    end
+
+    return success
+end
+
+while currentWave <= 4 do
+    isWaveTransitioning = false
+    isChasingNPC = false
+    magmaSwampInProgress = false
+    cancelCurrentTween()
+    
+    print("Esperando NPCs de Wave " .. currentWave)
+    local waitStart = tick()
+    while #workspace.NPCs:GetChildren() == 0 do
+        if tick() - waitStart > 5 then
+            print("Reintentando detección de NPCs...")
+            rootPart.CFrame = CFrame.new(wavePositions[currentWave])
+            task.wait(1)
+            waitStart = tick()
+        end
+        task.wait(0.1)
+    end
+    
+    print("NPCs encontrados para Wave " .. currentWave .. ": " .. #workspace.NPCs:GetChildren())
+    task.wait(1)
+    
+    -- NUEVO: Forzar movimiento inicial hacia los NPCs
+    local initialNPC, initialDistance = getClosestNPC()
+    if initialNPC and initialNPC:FindFirstChild("HumanoidRootPart") then
+        print("Iniciando movimiento inicial hacia NPCs")
+        local npcPos = initialNPC.HumanoidRootPart.Position
+        rootPart.CFrame = CFrame.new(Vector3.new(npcPos.X, npcPos.Y + 8, npcPos.Z))
+        task.wait(0.5)
+    end
+    
+    -- Variables de control para estancamiento
+    local lastNPCCount = #workspace.NPCs:GetChildren()
+    local stuckTimer = tick()
+    local stuckAttempts = 0
+    local maxStuckAttempts = 3
+    
+    while areNPCsAlive() do
+        print("Estado actual - Wave:", currentWave, 
+              "NPCs vivos:", #workspace.NPCs:GetChildren(), 
+              "isChasingNPC:", isChasingNPC)
+        
+        processNPCs()
+        task.wait(0.1)
+        
+        if tick() - stuckTimer >= 5 then
+            local currentNPCCount = #workspace.NPCs:GetChildren()
+            print("Comprobando progreso - NPCs actuales:", currentNPCCount, "NPCs anteriores:", lastNPCCount)
+            
+            if currentNPCCount >= lastNPCCount then
+                stuckAttempts = stuckAttempts + 1
+                print("Detectado estancamiento #" .. stuckAttempts)
+                
+                isWaveTransitioning = false
+                isChasingNPC = false
+                magmaSwampInProgress = false
+                cancelCurrentTween()
+                
+                -- Forzar movimiento hacia el NPC más cercano
+                local stuckNPC, stuckDistance = getClosestNPC()
+                if stuckNPC and stuckNPC:FindFirstChild("HumanoidRootPart") then
+                    print("Reposicionando hacia NPC más cercano")
+                    local npcPos = stuckNPC.HumanoidRootPart.Position
+                    rootPart.CFrame = CFrame.new(npcPos.X, npcPos.Y + 8, npcPos.Z)
+                    task.wait(0.5)
+                end
+
+                -- Si estamos en Wave 5 y estamos en la posición correcta (distancia 0),
+                -- y se han alcanzado los intentos máximos, forzamos la eliminación de los NPCs.
+                if currentWave == 5 then
+                    local currentDistance = (rootPart.Position - wave5Pos).Magnitude
+                    print("Posición Wave 5 detectada. Distancia:", currentDistance, "StuckAttempts:", stuckAttempts)
+                    
+                    -- Si estamos en la posición correcta, forzamos el ataque a los NPCs
+                    if currentDistance < 1 then
+                        print("En posición correcta para Wave 5, forzando ataque a NPCs...")
+                        
+                        -- Forzar el ataque a todos los NPCs
+                        for _, npc in ipairs(workspace.NPCs:GetChildren()) do
+                            if npc and npc:FindFirstChild("HumanoidRootPart") then
+                                -- Forzar persecución y ataque al NPC
+                                isChasingNPC = true
+                                local npcPos = npc.HumanoidRootPart.Position
+                                
+                                -- Moverse cerca del NPC
+                                rootPart.CFrame = CFrame.new(npcPos.X, npcPos.Y + 8, npcPos.Z)
+                                task.wait(0.1)
+                                
+                                -- Activar MagmaSwamp
+                                if not magmaSwampInProgress then
+                                    activateMagmaSwamp()
+                                end
+                                
+                                -- Forzar el ataque
+                                task.spawn(function()
+                                    chaseNPC(npc)
+                                end)
+                                
+                                task.wait(0.5)  -- Esperar un poco entre cada NPC
+                            end
+                        end
+                        
+                        -- Reiniciar los contadores de estancamiento
+                        stuckAttempts = 0
+                        lastNPCCount = #workspace.NPCs:GetChildren()
+                        stuckTimer = tick()
+                    end
+                end
+
+                if stuckAttempts >= maxStuckAttempts then
+                    print("Máximo número de intentos alcanzado, reiniciando wave...")
+                    break
+                end
+            end
+            
+            lastNPCCount = currentNPCCount
+            stuckTimer = tick()
+        end
+    end
+    
+    if stuckAttempts >= maxStuckAttempts then
+        print("Reiniciando Wave " .. currentWave)
+        continue
+    end
+    
+    print("Wave " .. currentWave .. " completada")
+    task.wait(1)
+    
+    -- Solo para wave 2, secuencia especial después de completarla
+    if currentWave == 2 then
+        print("Wave 2 completada, iniciando secuencia especial para wave 3...")
+        isWaveTransitioning = true
+        cancelCurrentTween()
+        
+        local speed = 55  -- Velocidad base reducida para tweens (más lento)
+        
+        -- Esperar 2 segundos
+        task.wait(2)
+        
+        -- Subir directo a altura 60 (teleport)
+        print("Subiendo a altura 60...")
+        rootPart.CFrame = CFrame.new(rootPart.Position.X, 60, rootPart.Position.Z)
+        
+        
+        -- TWEEN a la posición 58, 52, 22 (no TP, se utiliza tween)
+        print("Moviendo a la primera posición con tween...")
+        local targetCF = CFrame.new(58, 52, 22)
+        local distance = (targetCF.Position - rootPart.Position).Magnitude
+        local tweenInfo = TweenInfo.new(
+            distance / speed,
+            Enum.EasingStyle.Linear
+        )
+        local tween = TweenService:Create(rootPart, tweenInfo, {
+            CFrame = targetCF
+        })
+        tween:Play()
+        tween.Completed:Wait()
+     
+        
+        -- Segunda posición (tween)
+        print("Moviendo a segunda posición...")
+        targetCF = CFrame.new(-23, 60, 15)
+        distance = (targetCF.Position - rootPart.Position).Magnitude
+        tweenInfo = TweenInfo.new(
+            distance / speed,
+            Enum.EasingStyle.Linear
+        )
+        tween = TweenService:Create(rootPart, tweenInfo, {
+            CFrame = targetCF
+        })
+        tween:Play()
+        tween.Completed:Wait()
+      
+        
+        -- Tercera posición (tween)
+        print("Moviendo a tercera posición...")
+        targetCF = CFrame.new(-50, 82, 17)
+        distance = (targetCF.Position - rootPart.Position).Magnitude
+        tweenInfo = TweenInfo.new(
+            distance / speed,
+            Enum.EasingStyle.Linear
+        )
+        tween = TweenService:Create(rootPart, tweenInfo, {
+            CFrame = targetCF
+        })
+        tween:Play()
+        tween.Completed:Wait()
+      
+        
+        -- Cuarta posición (tween)
+        print("Moviendo a cuarta posición...")
+        targetCF = CFrame.new(-95, 128, 18)
+        distance = (targetCF.Position - rootPart.Position).Magnitude
+        tweenInfo = TweenInfo.new(
+            distance / speed,
+            Enum.EasingStyle.Linear
+        )
+        tween = TweenService:Create(rootPart, tweenInfo, {
+            CFrame = targetCF
+        })
+        tween:Play()
+        tween.Completed:Wait()
+  
+        
+        -- Quinta posición (tween)
+        print("Moviendo a quinta posición...")
+        targetCF = CFrame.new(-122, 131, 19)
+        distance = (targetCF.Position - rootPart.Position).Magnitude
+        tweenInfo = TweenInfo.new(
+            distance / speed,
+            Enum.EasingStyle.Linear
+        )
+        tween = TweenService:Create(rootPart, tweenInfo, {
+            CFrame = targetCF
+        })
+        tween:Play()
+        tween.Completed:Wait()
+ 
+        
+        -- Posición final (wave 3) (tween)
+        print("Moviendo a posición final (wave 3)...")
+        targetCF = CFrame.new(-241, 129, 9)
+        distance = (targetCF.Position - rootPart.Position).Magnitude
+        tweenInfo = TweenInfo.new(
+            distance / speed,
+            Enum.EasingStyle.Linear
+        )
+        tween = TweenService:Create(rootPart, tweenInfo, {
+            CFrame = targetCF
+        })
+        tween:Play()
+        tween.Completed:Wait()
+        
+        isWaveTransitioning = false
+        
+        -- Continuar con la siguiente wave
+        currentWave = currentWave + 1
+        continue
+    end
+    
+    if currentWave == 3 then
+        print("Wave 3 completada, iniciando transición especial a Wave 4...")
+        isWaveTransitioning = true
+        cancelCurrentTween()
+        
+        local speed = 35  -- Velocidad base para los tweens, ahora establecida en 35
+        task.wait(2)
+        
+        -- Primero, regresar a la posición principal de Wave 3 (-241, 129, 9)
+        print("Regresando a la posición principal de Wave 3 (-241, 129, 9)...")
+        local targetCF = CFrame.new(-241, 129, 9)
+        local distance = (targetCF.Position - rootPart.Position).Magnitude
+        local tweenInfo = TweenInfo.new(distance / speed, Enum.EasingStyle.Linear)
+        local tween = TweenService:Create(rootPart, tweenInfo, { CFrame = targetCF })
+        tween:Play()
+        tween.Completed:Wait()
+        task.wait(1)
+        
+        -- Luego, moverse a la posición intermedia (-300, 125, 48)
+        print("Moviéndose a la posición intermedia (-300, 125, 48)...")
+        targetCF = CFrame.new(-300, 125, 48)
+        distance = (targetCF.Position - rootPart.Position).Magnitude
+        tweenInfo = TweenInfo.new(distance / speed, Enum.EasingStyle.Linear)
+        tween = TweenService:Create(rootPart, tweenInfo, { CFrame = targetCF })
+        tween:Play()
+        tween.Completed:Wait()
+        
+   
+        -- Por último, moverse a la posición final de Wave 4 (-367, 164, 47)
+        print("Moviendo a Wave 4 (-367, 164, 47)...")
+        targetCF = CFrame.new(-338, 151, 47)
+        distance = (targetCF.Position - rootPart.Position).Magnitude
+        tweenInfo = TweenInfo.new(distance / speed, Enum.EasingStyle.Linear)
+        tween = TweenService:Create(rootPart, tweenInfo, { CFrame = targetCF })
+        tween:Play()
+        tween.Completed:Wait()
+        
+        
+        print("Moviendo a Wave 4 (-472, 244, 47)...")
+        targetCF = CFrame.new(-364, 169, 46)
+        distance = (targetCF.Position - rootPart.Position).Magnitude
+        tweenInfo = TweenInfo.new(distance / speed, Enum.EasingStyle.Linear)
+        tween = TweenService:Create(rootPart, tweenInfo, { CFrame = targetCF })
+        tween:Play()
+        tween.Completed:Wait()
+        
+        
+        print("Moviendo a Wave 4 (-475, 252, 47)...")
+        targetCF = CFrame.new(-397, 188, 46)
+        distance = (targetCF.Position - rootPart.Position).Magnitude
+        tweenInfo = TweenInfo.new(distance / speed, Enum.EasingStyle.Linear)
+        tween = TweenService:Create(rootPart, tweenInfo, { CFrame = targetCF })
+        tween:Play()
+        tween.Completed:Wait()
+        
+
+        targetCF = CFrame.new(-468, 232, 47)
+        distance = (targetCF.Position - rootPart.Position).Magnitude
+        tweenInfo = TweenInfo.new(distance / speed, Enum.EasingStyle.Linear)
+        tween = TweenService:Create(rootPart, tweenInfo, { CFrame = targetCF })
+        tween:Play()
+        tween.Completed:Wait()
+        
+        
+        rootPart.CFrame = targetCF
+        isWaveTransitioning = false
+        task.wait(1)
+        
+        currentWave = currentWave + 1  -- Se actualiza currentWave a 4
+        continue
+    end
+    
+    -- Preparar siguiente wave
+    currentWave = currentWave + 1
+    if currentWave <= 4 then
+        print("Moviendo a Wave " .. currentWave)
+        isWaveTransitioning = true
+        
+        local nextPos = wavePositions[currentWave]
+        local moveSuccess = moveToNextWave(nextPos)
+        
+        if not moveSuccess then
+            print("No se pudo mover a la siguiente wave")
+            break
+        end
+        
+        -- Agregar espera específica después del tween para Wave 2
+        if currentWave == 2 then
+            print("Posición de Wave 2 alcanzada - Esperando 5 segundos...")
+            task.wait(6.5)  -- Espera de 5 segundos después de llegar a la posición
+        end
+        
+        isWaveTransitioning = false
+        task.wait(1)
+    end
+end
+print("¡Waves 1-4 completadas!")
+
+task.wait(4)  -- Espera 10 segundos
+
+print("Wave 4 completada, esperando TP a Wave 5...")
+task.wait(5)  -- Esperar 5 segundos después de Wave 4
+
+-- Esperar hasta que el jugador sea teletransportado a la posición de Wave 5
+local wave5TPPosition = Vector3.new(-1286, 140, 194)
+local isTPed = false
+
+while not isTPed do
+    local distance = (rootPart.Position - wave5TPPosition).Magnitude
+    if distance <= 100 then
+        print("TP detectado a Wave 5, iniciando secuencia de ataque")
+        isTPed = true
+    end
+    task.wait(0.1)
+end
+
+-- Waves 5-6 (similar a waves 1-4)
+while currentWave >= 5 and currentWave <= 6 do
+    print("Iniciando Wave " .. currentWave)
+    
+    -- Esperar NPCs (Leo o Cupid)
+    repeat
+        task.wait(0.1)
+    until #workspace.NPCs:GetChildren() > 0
+    
+    -- Guardar posición inicial del boss
+    if currentWave == 7 then
+        local leo = workspace.NPCs:GetChildren()[1]
+        if leo and leo:FindFirstChild("HumanoidRootPart") then
+            leoInitialCFrame = leo.HumanoidRootPart.CFrame
+            print("CFrame inicial de Leo guardado")
+        end
+    elseif currentWave == 8 then
+        local cupid = workspace.NPCs:GetChildren()[1]
+        if cupid and cupid:FindFirstChild("HumanoidRootPart") then
+            cupidInitialCFrame = cupid.HumanoidRootPart.CFrame
+            print("CFrame inicial de Cupid Queen guardado")
+        end
+    end
+    
+    local safeHeight = 200
+    
+    while areNPCsAlive() do
+        local health = getCurrentHealth()
+        
+        -- Manejo de vida baja para Leo y Cupid
+        if health < 300 then
+            print("¡Vida baja! Retrocediendo...")
+            
+            if currentWave == 7 and leoInitialCFrame then
+                -- Retroceso específico para Leo
+                local safeCFrame = leoInitialCFrame * CFrame.new(0, safeHeight, 20)
+                local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Linear)
+                local tween = TweenService:Create(rootPart, tweenInfo, { CFrame = safeCFrame })
+                tween:Play()
+                tween.Completed:Wait()
+            elseif currentWave == 8 and cupidInitialCFrame then
+                -- Retroceso específico para Cupid (aumenta altura progresivamente)
+                safeHeight = safeHeight + 50
+                local safeCFrame = cupidInitialCFrame * CFrame.new(0, safeHeight, 20)
+                local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Linear)
+                local tween = TweenService:Create(rootPart, tweenInfo, { CFrame = safeCFrame })
+                tween:Play()
+                tween.Completed:Wait()
+            end
+            
+            -- Esperar recuperación
+            repeat
+                task.wait(0.1)
+                health = getCurrentHealth()
+            until health >= 500
+            print("Vida recuperada, volviendo al combate")
+        else
+            -- Procesar NPCs normalmente si la vida está bien
+            processNPCs()
+        end
+        
+        task.wait(0.1)
+    end
+    
+    -- Manejo de finalización de wave
+    if not areNPCsAlive() then
+        print("Wave " .. currentWave .. " completada")
+        currentWave = currentWave + 1
+        
+        -- Espera especial entre Leo y Cupid Queen
+        if currentWave == 8 then
+            print("Esperando aparición de Cupid Queen...")
+            task.wait(3)
+        end
+    end
+end
+
+-- Waves 7-8 (Leo y Cupid)
+while currentWave >= 7 and currentWave <= 8 do
+    print("Iniciando Wave " .. currentWave .. " (Boss Fight)")
+    
+    -- Esperar NPCs (Leo o Cupid)
+    repeat
+        task.wait(0.1)
+    until #workspace.NPCs:GetChildren() > 0
+    
+    -- Guardar posición inicial del boss
+    if currentWave == 7 then
+        local leo = workspace.NPCs:GetChildren()[1]
+        if leo and leo:FindFirstChild("HumanoidRootPart") then
+            leoInitialCFrame = leo.HumanoidRootPart.CFrame
+            print("CFrame inicial de Leo guardado")
+        end
+    elseif currentWave == 8 then
+        local cupid = workspace.NPCs:GetChildren()[1]
+        if cupid and cupid:FindFirstChild("HumanoidRootPart") then
+            cupidInitialCFrame = cupid.HumanoidRootPart.CFrame
+            print("CFrame inicial de Cupid Queen guardado")
+        end
+    end
+    
+    while areNPCsAlive() do
+        local health = getCurrentHealth()
+        local boss = workspace.NPCs:GetChildren()[1]
+        
+        -- Manejo de vida baja para Leo y Cupid
+        if health < 300 then
+            print("¡Vida baja! Iniciando secuencia de recuperación... Vida actual:", health)
+            
+            -- Primero tween a la posición inicial de waves 5-6-7
+            local safePos = Vector3.new(-1286, 140, 194)
+            local distance = (safePos - rootPart.Position).Magnitude
+            local tweenInfo = TweenInfo.new(
+                distance / 100,  -- velocidad de 100 studs por segundo
+                Enum.EasingStyle.Linear
+            )
+            
+            local tween = TweenService:Create(rootPart, tweenInfo, {
+                CFrame = CFrame.new(safePos)
+            })
+            
+            print("Retrocediendo a posición segura general")
+            tween:Play()
+            tween.Completed:Wait()
+            task.wait(0.5)
+            
+            -- Verificar si el boss está cerca y la vida aún no se recupera lo suficiente
+            while health < 600 and boss and boss:FindFirstChild("HumanoidRootPart") do
+                local bossDistance = (boss.HumanoidRootPart.Position - rootPart.Position).Magnitude
+                health = getCurrentHealth()  -- Actualizar la vida en cada iteración
+                print("Esperando recuperación... Vida actual:", health)
+                
+                if bossDistance < 100 then  -- Si el boss está demasiado cerca
+                    print("Boss demasiado cerca, retrocediendo a su posición inicial")
+                    
+                    -- Tween a la posición inicial del boss correspondiente
+                    local targetCFrame
+                    if currentWave == 7 and leoInitialCFrame then
+                        targetCFrame = leoInitialCFrame
+                    elseif currentWave == 8 and cupidInitialCFrame then
+                        targetCFrame = cupidInitialCFrame
+                    end
+                    
+                    if targetCFrame then
+                        distance = (targetCFrame.Position - rootPart.Position).Magnitude
+                        tweenInfo = TweenInfo.new(
+                            distance / 100,
+                            Enum.EasingStyle.Linear
+                        )
+                        
+                        tween = TweenService:Create(rootPart, tweenInfo, {
+                            CFrame = targetCFrame
+                        })
+                        
+                        tween:Play()
+                        tween.Completed:Wait()
+                    end
+                end
+                
+                task.wait(0.1)
+            end
+            
+            print("Vida recuperada a nivel seguro:", health, ". Volviendo al combate")
+        else
+            -- Procesar NPCs normalmente si la vida está bien
+            processNPCs()
+        end
+        
+        task.wait(0.1)
+    end
+    
+    -- Manejo de finalización de wave
+    if not areNPCsAlive() then
+        print("Wave " .. currentWave .. " completada")
+        currentWave = currentWave + 1
+        
+        -- Espera especial entre Leo y Cupid Queen
+        if currentWave == 8 then
+            print("Esperando aparición de Cupid Queen...")
+            task.wait(3)
+        end
+    end
+end
+
+-- Sistema de recuperación para Leo (Wave 7)
+while currentWave == 7 do  -- Wave de Leo
+    local health = getCurrentHealth()
+    local leo = workspace.NPCs:GetChildren()[1]
+    
+    if health and health < 200 then  -- Si la vida es menor a 200
+        print("Vida baja detectada:", health, "- Iniciando modo recuperación")
+        
+        -- Cancelar cualquier proceso actual
+        isWaveTransitioning = true
+        isChasingNPC = false
+        magmaSwampInProgress = false
+        cancelCurrentTween()
+        
+        -- Si tenemos la posición de Leo
+        if leo and leo:FindFirstChild("HumanoidRootPart") then
+            local leoPos = leo.HumanoidRootPart.Position
+            local safePos = Vector3.new(leoPos.X, leoPos.Y + 60, leoPos.Z)
+            
+            -- Moverse a la posición segura
+            rootPart.CFrame = CFrame.new(safePos)
+            
+            -- Esperar hasta recuperar 600 de vida
+            print("Esperando recuperación de vida...")
+            repeat
+                health = getCurrentHealth()
+                task.wait(0.1)
+                
+                -- Mantener la posición sobre Leo
+                if leo and leo:FindFirstChild("HumanoidRootPart") then
+                    local currentLeoPos = leo.HumanoidRootPart.Position
+                    rootPart.CFrame = CFrame.new(Vector3.new(currentLeoPos.X, currentLeoPos.Y + 60, currentLeoPos.Z))
+                end
+            until health >= 600 or not leo or not leo.Parent
+            
+            print("Vida recuperada:", health, "- Volviendo al combate")
+        end
+        
+        isWaveTransitioning = false
+    else
+        -- Continuar con el proceso normal de ataque
+        processNPCs()
+    end
+    
+    task.wait(0.1)
+    
+    -- Verificar si Leo sigue vivo
+    if not areNPCsAlive() then
+        print("Leo derrotado - Wave 7 completada")
+        break
+    end
+end
+
+while currentWave == 8 do  -- Wave de Cupid Queen
+    local health = getCurrentHealth()
+    local cupid = workspace.NPCs:GetChildren()[1]
+    
+    if health and health < 200 then  -- Si la vida es menor a 200
+        print("Vida baja detectada:", health, "- Iniciando modo recuperación")
+        
+        -- Cancelar cualquier proceso actual
+        isWaveTransitioning = true
+        isChasingNPC = false
+        magmaSwampInProgress = false
+        cancelCurrentTween()
+        
+        -- Si tenemos la posición de Cupid Queen
+        if cupid and cupid:FindFirstChild("HumanoidRootPart") then
+            local cupidPos = cupid.HumanoidRootPart.Position
+            local safePos = Vector3.new(cupidPos.X, cupidPos.Y + 60, cupidPos.Z)
+            
+            -- Moverse a la posición segura
+            rootPart.CFrame = CFrame.new(safePos)
+            
+            -- Esperar hasta recuperar 600 de vida
+            print("Esperando recuperación de vida...")
+            repeat
+                health = getCurrentHealth()
+                task.wait(0.1)
+                
+                -- Mantener la posición sobre Cupid Queen
+                if cupid and cupid:FindFirstChild("HumanoidRootPart") then
+                    local currentCupidPos = cupid.HumanoidRootPart.Position
+                    rootPart.CFrame = CFrame.new(Vector3.new(currentCupidPos.X, currentCupidPos.Y + 60, currentCupidPos.Z))
+                end
+            until health >= 600 or not cupid or not cupid.Parent
+            
+            print("Vida recuperada:", health, "- Volviendo al combate")
+        end
+        
+        isWaveTransitioning = false
+    else
+        -- Continuar con el proceso normal de ataque
+        processNPCs()
+    end
+    
+    task.wait(0.1)
+    
+    -- Verificar si Cupid Queen sigue viva
+    if not areNPCsAlive() then
+        print("Cupid Queen derrotada - Wave 8 completada")
+        break
+    end
+end
