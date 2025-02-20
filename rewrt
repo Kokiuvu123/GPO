@@ -1,31 +1,17 @@
--- Configuración global
-getgenv().Settings = {
-    Speed = 12,
-    Active = true,
-    Height = 100,
-    Skill = "Explosive Swipe",
-    Delay = 0.3,
-    Webhook = ""
-}
+-- Mantener valores existentes o usar valores por defecto
+getgenv().Settings = getgenv().Settings or {}
+getgenv().Settings.Speed = getgenv().Settings.Speed or 12
+getgenv().Settings.Active = true
+getgenv().Settings.Height = 100
+getgenv().Settings.Skill = "Explosive Swipe"
+getgenv().Settings.Delay = 0.3
+getgenv().Settings.Webhook = getgenv().Settings.Webhook or ""
 
--- Servicios
-local Players = game:GetService("Players")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local RunService = game:GetService("RunService")
-local TweenService = game:GetService("TweenService")
-
--- Variables locales
-local player = Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local rootPart = character:WaitForChild("HumanoidRootPart")
-
--- Obtener configuración del main.lua
-local speed = getgenv().Settings.Speed
-local webhook = getgenv().Settings.Webhook
+-- ... resto del código ...
 
 -- Función mejorada para enviar al webhook
 local function sendWebhook(message)
-    if webhook and webhook ~= "" then
+    if getgenv().Settings.Webhook and getgenv().Settings.Webhook ~= "" then
         local data = {
             username = "Ousi.HUB",
             avatar_url = "https://i.imgur.com/AfFp7pu.png",
@@ -56,8 +42,8 @@ local function sendWebhook(message)
         }
 
         local success, response = pcall(function()
-            return request({
-                Url = webhook,
+            return (syn and syn.request or request)({
+                Url = getgenv().Settings.Webhook,
                 Method = "POST",
                 Headers = {
                     ["Content-Type"] = "application/json"
@@ -67,22 +53,9 @@ local function sendWebhook(message)
         end)
 
         if success then
-            if response.StatusCode == 204 then
-                print("Webhook enviado exitosamente (204 No Content)")
-                return true
-            else
-                print("Webhook enviado con código de estado:", response.StatusCode)
-                return true
-            end
+            print("Webhook enviado exitosamente")
         else
             warn("Error al enviar webhook:", response)
-            return false
         end
     end
 end
-
--- Enviar webhook inicial
-print("Enviando webhook inicial...")
-sendWebhook("🟢 Script GPO iniciado - Velocidad: " .. speed)
-
--- Resto del código del rewrite...
