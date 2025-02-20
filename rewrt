@@ -1,1 +1,50 @@
 
+-- Configuración global
+getgenv().Settings = {
+    Speed = 12,
+    Active = true,
+    Height = 100,
+    Skill = "Explosive Swipe",
+    Delay = 0.3,
+    Webhook = ""
+}
+
+-- Servicios
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+
+-- Variables locales
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local rootPart = character:WaitForChild("HumanoidRootPart")
+
+-- Obtener configuración del main.lua
+local speed = getgenv().Settings.Speed
+local webhook = getgenv().Settings.Webhook
+
+-- Función para enviar al webhook
+local function sendWebhook(message)
+    if webhook and webhook ~= "" then
+        pcall(function()
+            local data = {
+                ["content"] = message
+            }
+            local headers = {
+                ["Content-Type"] = "application/json"
+            }
+            request({
+                Url = webhook,
+                Method = "POST",
+                Headers = headers,
+                Body = game:GetService("HttpService"):JSONEncode(data)
+            })
+        end)
+    end
+end
+
+-- Ejemplo de uso
+sendWebhook("Script GPO iniciado - Velocidad: " .. speed)
+
+-- Resto del código del rewrite...
