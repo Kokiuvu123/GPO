@@ -1,0 +1,14 @@
+
+
+local very = verifyKey(getgenv().script_key)
+
+if not very then
+    copyLink()
+    game.Players.LocalPlayer:Kick("noKey alr copied link")
+    return
+else
+    print("key found")
+    return loadstring(game:HttpGet('https://raw.githubusercontent.com/Kokiuvu123/GPO/refs/heads/main/sadsadsad'))()
+end
+
+-- The rest of your code continues below...
